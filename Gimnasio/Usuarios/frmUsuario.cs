@@ -11,6 +11,7 @@ namespace Gimnasio.Usuarios
 {
     public partial class frmUsuario : Form
     {
+        Boolean cancel = false;
         public int idUsuario = 0;
         clsUsuario oUsuario = new clsUsuario();
 
@@ -37,7 +38,7 @@ namespace Gimnasio.Usuarios
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al cargar los datos "+oUsuario.getError());
+                MessageBox.Show(this, "Ocurrió un problema al cargar los datos " + oUsuario.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }
@@ -59,21 +60,27 @@ namespace Gimnasio.Usuarios
             
             oUsuario.Usuario = txtUsuario.Text.Trim();
             oUsuario.Nombre = txtNombre.Text.Trim();
-            oUsuario.Password = txtPassword.Text.Trim();
+            oUsuario.Password = txtPassword.Text.Trim();            
 
             if (oUsuario.Usuario.Equals("") || oUsuario.Password.Equals(""))
             {
-                MessageBox.Show("Usuario y password son obligatorios");
+                MessageBox.Show(this, "Usuario y contraseña son obligatorios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            if (oUsuario.Password != txtPasswordConfirm.Text) {
+                MessageBox.Show(this,"La contraseña y la confirmación de contraseña no coinciden","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
             if (oUsuario.add())
             {
-                MessageBox.Show("Registro agregado con exito");
+                MessageBox.Show(this, "Registro agregado con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
-                MessageBox.Show(oUsuario.getError());
+                MessageBox.Show(this, oUsuario.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                    
         }
 
@@ -85,17 +92,40 @@ namespace Gimnasio.Usuarios
 
             if (oUsuario.Usuario.Equals("") || oUsuario.Password.Equals(""))
             {
-                MessageBox.Show("Usuario y password son obligatorios");
+                MessageBox.Show(this, "Usuario y contraseña son obligatorios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
+            if (oUsuario.Password != txtPasswordConfirm.Text)
+            {
+                MessageBox.Show(this, "La contraseña y la confirmación de contraseña no coinciden", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (oUsuario.edit(idUsuario))
             {
-                MessageBox.Show("Registro modificado con exito");
+                MessageBox.Show(this, "Registro modificado con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
-                MessageBox.Show(oUsuario.getError());
+                MessageBox.Show(this, oUsuario.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void frmUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.cancel)
+            {
+                if (MessageBox.Show(this, "Estás seguro de cancelar", "Confirma cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.cancel = true;
+            this.Close();
         }
 
     }

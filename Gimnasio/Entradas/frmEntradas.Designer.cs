@@ -38,16 +38,29 @@
             // 
             // cmdAbilitar
             // 
+            this.cmdAbilitar.Location = new System.Drawing.Point(395, 4);
             this.cmdAbilitar.Visible = false;
             // 
             // cmdDesabilitar
             // 
+            this.cmdDesabilitar.Location = new System.Drawing.Point(282, 4);
             this.cmdDesabilitar.Visible = false;
             // 
             // cmdModificar
             // 
-            this.cmdModificar.Size = new System.Drawing.Size(96, 31);
+            this.cmdModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmdModificar.Image = global::Gimnasio.Properties.Resources.iconfinder_visible_172630;
+            this.cmdModificar.Location = new System.Drawing.Point(3, 3);
+            this.cmdModificar.Size = new System.Drawing.Size(96, 48);
             this.cmdModificar.Text = "Mostrar";
+            // 
+            // cmdNuevo
+            // 
+            this.cmdNuevo.Location = new System.Drawing.Point(556, 3);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(153, 4);
             // 
             // frmEntradas
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Configuration;
+using Gimnasio.Sesion;
 
 namespace Gimnasio
 {
@@ -21,63 +22,29 @@ namespace Gimnasio
         private void Form1_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-
-            //mensaje inicio, puedes quitar esta linea, pero este software lo hizo Héctor de León Guevara | www.hdeleon.net
-            try
-            {
-                if (!System.IO.File.Exists(AppDomain.CurrentDomain.BaseDirectory+"/hdeleon.txt"))
-                {
-                    FrmMensajeInicial frmMensaje = new FrmMensajeInicial();
-                    frmMensaje.ShowDialog();
-
-                    System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory+"/hdeleon.txt");
-                }
-            }
-            catch { }
-            
             sinSesion();
-            
         }
+
+        #region METODOS PRIVADOS
         /// <summary>
         /// metodo que abre la ventana de login
         /// </summary>
         private void sinSesion()
         {
-            panel1.Enabled = false;
+#if !DEBUG
+            pnlMain.Enabled = false;
             cerrarFormuarios();
-
             Sesion.frmLogin frmL = new Sesion.frmLogin();
             frmL.ShowDialog();
-
             if(Utilidades.clsUsuario.existeSesion)
-            panel1.Enabled = true;
-        }
+#else
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!detectarFormularioAbierto("frmUsuarios"))
-            {
-                Usuarios.frmUsuarios frmU = new Usuarios.frmUsuarios();
-                frmU.MdiParent = this;
-                frmU.Show();
-                frmU.WindowState = FormWindowState.Maximized;
-            }
+            Utilidades.clsUsuario.login("admin","a");
+#endif
+            pnlMain.Enabled = true;
         }
 
         
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (!detectarFormularioAbierto("frmMembresias"))
-            {
-                Membresias.frmMembresias frmM = new Membresias.frmMembresias();
-                frmM.MdiParent = this;
-                frmM.Show();
-                frmM.WindowState = FormWindowState.Maximized;
-            }
-        }
-
-        #region METODOS PRIVADOS
         private bool detectarFormularioAbierto(string formulario)
         {
             bool abierto = false;
@@ -104,38 +71,6 @@ namespace Gimnasio
 
         #endregion
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (!detectarFormularioAbierto("frmProductos"))
-            {
-                Productos.frmProductos frmM = new Productos.frmProductos();
-                frmM.MdiParent = this;
-                frmM.Show();
-                frmM.WindowState = FormWindowState.Maximized;
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (!detectarFormularioAbierto("frmSocios"))
-            {
-               Socios.frmSocios frmM = new Socios.frmSocios();
-                frmM.MdiParent = this;
-                frmM.Show();
-                frmM.WindowState = FormWindowState.Maximized;
-            }
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            if (!detectarFormularioAbierto("frmRegistro"))
-            {
-                Registro.frmRegistro frmM = new Registro.frmRegistro();
-                frmM.Show();
-                frmM.WindowState = FormWindowState.Maximized;
-            }
-        }
-
         private void FrmMain_KeyDown(object sender, KeyEventArgs e)
         {
             //SE ABRE REGISTRO CON F12
@@ -149,65 +84,59 @@ namespace Gimnasio
                 }
             }
         }
-
-        private void FrmMain_KeyPress(object sender, KeyPressEventArgs e)
+                
+        private void creadoPorHéctorDeLeónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmCreador oFrm = new frmCreador();
+            oFrm.ShowDialog();
+                
         }
 
-        private void FrmMain_KeyUp(object sender, KeyEventArgs e)
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (!detectarFormularioAbierto("frmReportes"))
+            if (!detectarFormularioAbierto("frmUsuarios"))
             {
-                Reportes.frmReportes frmM = new Reportes.frmReportes();
+                Usuarios.frmUsuarios frmU = new Usuarios.frmUsuarios();
+                frmU.MdiParent = this;
+                frmU.Show();
+                frmU.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void sociosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!detectarFormularioAbierto("frmSocios"))
+            {
+                Socios.frmSocios frmM = new Socios.frmSocios();
                 frmM.MdiParent = this;
                 frmM.Show();
                 frmM.WindowState = FormWindowState.Maximized;
             }
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void membresiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Utilidades.clsUsuario.salir())
+            if (!detectarFormularioAbierto("frmMembresias"))
             {
-                sinSesion();
-            }
-            else
-            {
-                MessageBox.Show(Utilidades.clsUsuario.error);
-            }
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if (!detectarFormularioAbierto("frmConfiguracion"))
-            {
-                Configuracion.frmConfiguracion frmM = new Configuracion.frmConfiguracion();
+                Membresias.frmMembresias frmM = new Membresias.frmMembresias();
                 frmM.MdiParent = this;
                 frmM.Show();
                 frmM.WindowState = FormWindowState.Maximized;
             }
         }
 
-        private void iniciarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Utilidades.clsUsuario.existeSesion)
-                sinSesion();
-            else
-                MessageBox.Show("Cierra la sesión primero");
+            if (!detectarFormularioAbierto("frmProductos"))
+            {
+                Productos.frmProductos frmM = new Productos.frmProductos();
+                frmM.MdiParent = this;
+                frmM.Show();
+                frmM.WindowState = FormWindowState.Maximized;
+            }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!detectarFormularioAbierto("frmEntradas"))
             {
@@ -218,7 +147,7 @@ namespace Gimnasio
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void salidasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!detectarFormularioAbierto("frmSalidas"))
             {
@@ -229,20 +158,32 @@ namespace Gimnasio
             }
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-      
+            if (!detectarFormularioAbierto("frmReportes"))
+            {
+                Reportes.frmReportes frmM = new Reportes.frmReportes();
+                frmM.MdiParent = this;
+                frmM.Show();
+                frmM.WindowState = FormWindowState.Maximized;
+            }
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void configuraciónGeneralToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            if (!detectarFormularioAbierto("frmConfiguracion"))
+            {
+                Configuracion.frmConfiguracion frmM = new Configuracion.frmConfiguracion();
+                frmM.MdiParent = this;
+                frmM.Show();
+                frmM.WindowState = FormWindowState.Maximized;
+            }
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void crearToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-         
+
             SaveFileDialog sFileDialog1 = new SaveFileDialog();
 
             sFileDialog1.InitialDirectory = "c:\\";
@@ -269,7 +210,7 @@ namespace Gimnasio
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Ocurrio un error " + ex.Message);
+                        MessageBox.Show("Ocurrió un error " + ex.Message);
                     }
 
                 }
@@ -279,10 +220,10 @@ namespace Gimnasio
                 }
             }
 
-            MessageBox.Show("Información guardada con exito");
+            MessageBox.Show("Información guardada con éxito");
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void restaurarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro de abrir un archivo de respaldo? se remplazara toda la información en el sistema con lo que existe en el archivo de respaldo", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -299,18 +240,20 @@ namespace Gimnasio
                 {
                     try
                     {
-                            //se abre el respaldo
-                            try
-                            {
-                                string constr = "server=localhost;User Id=root;Persist Security Info=True;database=gym";
-                                string file = openFileDialog1.FileName;
-                                MySqlBackup mb = new MySqlBackup(constr);
-                                mb.ImportInfo.FileName = file;
-                                mb.ImportInfo.SetTargetDatabase("gym", ImportInformations.CharSet.utf8);
-                                mb.Import();
-                            }catch(Exception ex){
-                                MessageBox.Show("Ocurrio un error "+ex.Message);
-                            }
+                        //se abre el respaldo
+                        try
+                        {
+                            string constr = "server=localhost;User Id=root;Persist Security Info=True;database=gym";
+                            string file = openFileDialog1.FileName;
+                            MySqlBackup mb = new MySqlBackup(constr);
+                            mb.ImportInfo.FileName = file;
+                            mb.ImportInfo.SetTargetDatabase("gym", ImportInformations.CharSet.utf8);
+                            mb.Import();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ocurrió un error " + ex.Message);
+                        }
 
                     }
                     catch (Exception ex)
@@ -319,7 +262,7 @@ namespace Gimnasio
                     }
                 }
 
-                MessageBox.Show("Información restaurada con exito");
+                MessageBox.Show("Información restaurada con éxito");
 
                 //se cierran formularios
                 cerrarFormuarios();
@@ -332,20 +275,52 @@ namespace Gimnasio
                 {
                     MessageBox.Show(Utilidades.clsUsuario.error);
                 }
-               
+
             }
         }
 
-        private void creadoPorHéctorDeLeónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnRegistro_Click(object sender, EventArgs e)
         {
-            frmCreador oFrm = new frmCreador();
-            oFrm.ShowDialog();
-                
+            if (!detectarFormularioAbierto("frmRegistro"))
+            {
+                Registro.frmRegistro frmM = new Registro.frmRegistro();
+                frmM.Show();
+                frmM.WindowState = FormWindowState.Maximized;
+            }
         }
 
-        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnAdmin_Click(object sender, EventArgs e)
         {
+            Button btnSender = (Button)sender;
+            Point ptLowerLeft = new Point(0, btnSender.Height);
+            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+            adminMenu.Show(ptLowerLeft);
+        }
 
+        private void btnCerrarSesión_Click(object sender, EventArgs e)
+        {
+#if !DEBUG            
+            if (Utilidades.clsUsuario.salir())
+            {
+                sinSesion();
+            }
+            else
+            {
+                MessageBox.Show(this,Utilidades.clsUsuario.error,"Atención");
+            }
+#else
+            this.Close();
+#endif
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+#if !DEBUG
+            frmConfirm FrmConfirm = new frmConfirm();
+            e.Cancel = FrmConfirm.ShowDialog(this) == System.Windows.Forms.DialogResult.OK ? false : true;
+            FrmConfirm.Dispose();
+            FrmConfirm = null;
+#endif
         }
     }
 }

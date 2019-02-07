@@ -8,6 +8,7 @@ namespace Gimnasio.Registro
     class clsRegistro
     {
          public dsGimnasio.vwultimamembresiadetalladaRow datos;
+        
          public string error = ""; 
 
          int clave = 0;
@@ -17,6 +18,23 @@ namespace Gimnasio.Registro
          }
 
          public bool buscaDatos()
+         {
+             bool exito = false;
+             try
+             {
+                 dsGimnasioTableAdapters.vwultimamembresiadetalladaTableAdapter ta = new dsGimnasioTableAdapters.vwultimamembresiadetalladaTableAdapter();
+                 dsGimnasio.vwultimamembresiadetalladaDataTable dt = ta.GetDataByIdSocio(clave);
+                 if (dt.Rows.Count > 0)
+                 {
+                     datos = (dsGimnasio.vwultimamembresiadetalladaRow)dt.Rows[0];
+                     exito = true;
+                 }
+             }
+             catch { }
+             return exito;
+         }
+
+         public bool socio()
          {
              bool exito = false;
              try

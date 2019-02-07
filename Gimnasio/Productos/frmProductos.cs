@@ -36,7 +36,7 @@ namespace Gimnasio.Productos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de sistema " + ex.Message);
+                MessageBox.Show(this,"Error de sistema " + ex.Message,"Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -53,7 +53,12 @@ namespace Gimnasio.Productos
         {
             if (!oProducto.getDatos(dgvLista))
             {
-                MessageBox.Show(oProducto.getError());
+                MessageBox.Show(this, oProducto.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                dgvLista.Columns[2].HeaderText = "Descripción";
+                dgvLista.Columns[5].HeaderText = "Fecha de creación";
             }
 
 
@@ -82,7 +87,7 @@ namespace Gimnasio.Productos
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -97,13 +102,13 @@ namespace Gimnasio.Productos
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error " + oProducto.getError());
+                    MessageBox.Show(this, "Ocurrió un error " + oProducto.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -118,13 +123,13 @@ namespace Gimnasio.Productos
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error " + oProducto.getError());
+                    MessageBox.Show(this, "Ocurrió un error " + oProducto.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -133,7 +138,7 @@ namespace Gimnasio.Productos
             int id = Utilidades.OperacionesFormulario.getId(dgvLista);
             if (id > 0)
             {
-                if (MessageBox.Show("Estas seguro de eliminar el registro seleccionado", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show(this,"Estas seguro de eliminar el registro seleccionado", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     if (oProducto.changeState(3, id))
                     {
@@ -141,14 +146,14 @@ namespace Gimnasio.Productos
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrio un error " + oProducto.getError());
+                        MessageBox.Show(this, "Ocurrió un error " + oProducto.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

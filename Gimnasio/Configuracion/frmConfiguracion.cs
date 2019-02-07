@@ -48,7 +48,7 @@ namespace Gimnasio.Configuracion
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al cargar los datos " + clsConfiguracion.Error);
+                MessageBox.Show(this, "Ocurrió un problema al cargar los datos " + clsConfiguracion.Error, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }
@@ -82,7 +82,7 @@ namespace Gimnasio.Configuracion
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error del Sistema: " + ex.Message);
+                    MessageBox.Show(this, "Error del Sistema: " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -94,7 +94,7 @@ namespace Gimnasio.Configuracion
             {
                 if (!ExpresionesRegulares.RegEX.isNumber(txtAlerta.Text.Trim().ToString()))
                 {
-                    MessageBox.Show("El mensaje de alerta debe ser un numero, no letras ni caracteres extraños");
+                    MessageBox.Show(this, "El mensaje de alerta debe ser un número, no letras ni caracteres extraños", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }

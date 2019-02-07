@@ -54,7 +54,7 @@ namespace Gimnasio.Entradas
             {
                 if (!ExpresionesRegulares.RegEX.isNumber(txtCantidad.Text))
                 {
-                    MessageBox.Show("Solo debes capturar numeros en cantidad");
+                    MessageBox.Show(this, "Sólo se aceptan números válidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtCantidad.Text = "";
                     txtCantidad.Focus();
                     return;
@@ -62,7 +62,7 @@ namespace Gimnasio.Entradas
 
                 if (oProducto.datos==null)
                 {
-                    MessageBox.Show("Debes seleccionar un producto");
+                    MessageBox.Show(this, "Debes seleccionar un producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     cboProducto.Text = "";
                     cboProducto.Focus();
                     return;
@@ -101,7 +101,7 @@ namespace Gimnasio.Entradas
             // se obtiene el valor del productio
             int idProducto = int.Parse(dgvLista.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-            if (MessageBox.Show("Estas seguro de eliminar el producto de esta entrada", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show(this,"Estás seguro de eliminar el producto de ésta entrada", "Confirma eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 dgvLista.Rows.RemoveAt(e.RowIndex);
                 calcularTotal();
@@ -129,7 +129,7 @@ namespace Gimnasio.Entradas
                 //verificar si hay detalle
                 if (dgvLista.Rows.Count <= 0)
                 {
-                    MessageBox.Show("Deben existir productos en la lista de la entrada");
+                    MessageBox.Show(this,"Deben existir productos en la lista de entrada","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -151,16 +151,34 @@ namespace Gimnasio.Entradas
                 //se guarda
                 if (oEntrada.add())
                 {
-                    MessageBox.Show("Registro agregado con exito");
+                    MessageBox.Show(this, "Registro agregado con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
-                    MessageBox.Show(oProducto.getError());
+                    MessageBox.Show(this, oProducto.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             catch (Exception EX)
             {
-                MessageBox.Show("Ocurrio un error de sistema " + EX.Message);
+                MessageBox.Show(this, "Ocurrió un error de sistema " + EX.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        Boolean cancel = false;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.cancel = true;
+            this.Close();            
+        }
+
+        private void frmEntrada_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.cancel)
+            {
+                if (MessageBox.Show(this, "Estás seguro de cancelar", "Confirma cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }

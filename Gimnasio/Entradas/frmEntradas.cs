@@ -36,7 +36,7 @@ namespace Gimnasio.Entradas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de sistema " + ex.Message);
+                MessageBox.Show(this,"Error de sistema " + ex.Message,"Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -51,10 +51,11 @@ namespace Gimnasio.Entradas
         {
             if (!oEntrada.getDatos(dgvLista))
             {
-                MessageBox.Show(oEntrada.getError());
+                MessageBox.Show(this, oEntrada.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
+            else {
+                dgvLista.Columns[2].HeaderText = "Fecha de creación";
+            }
         }
         #endregion
 
@@ -63,7 +64,7 @@ namespace Gimnasio.Entradas
         private void nuevo(object sender, EventArgs e)
         {
             frmEntrada frmUs = new frmEntrada();
-            frmUs.ShowDialog();
+            frmUs.ShowDialog(this);
             refrescaLista();
         }
 
@@ -76,11 +77,11 @@ namespace Gimnasio.Entradas
                 //comprobar si es posible eliminarlo
                 if (!oEntrada.posibleEliminar(id))
                 {
-                    MessageBox.Show("Es imposible eliminar esta entrada ya que productos de ella ya han sido vendidos, solo se puede eliminar una entrada al momento de ser creada, SE CUIDADOSO AL CREARLAS");
+                    MessageBox.Show(this, "Es imposible eliminar ésta entrada ya que productos de ella ya han sido vendidos, solo se puede eliminar una entrada al momento de ser creada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                if (MessageBox.Show("Estas seguro de eliminar el registro seleccionado", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show(this,"Estás seguro de eliminar el registro seleccionado", "Confirma eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     if (oEntrada.remove(id))
                     {
@@ -88,14 +89,14 @@ namespace Gimnasio.Entradas
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrio un error " + oEntrada.getError());
+                        MessageBox.Show(this, "Ocurrió un error " + oEntrada.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -106,14 +107,14 @@ namespace Gimnasio.Entradas
             {
                 frmViewEntrada frmUs = new frmViewEntrada();
                 frmUs.id = id;
-                frmUs.ShowDialog();
+                frmUs.ShowDialog(this);
               
               
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

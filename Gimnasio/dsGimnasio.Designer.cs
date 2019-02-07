@@ -3988,9 +3988,13 @@ namespace Gimnasio {
                 this.columnClave.AllowDBNull = false;
                 this.columnClave.Unique = true;
                 this.columnNombre.MaxLength = 45;
+                this.columnPaterno.Caption = "Primer apellido";
                 this.columnPaterno.MaxLength = 45;
+                this.columnMaterno.Caption = "Segundo apellido";
                 this.columnMaterno.MaxLength = 45;
+                this.columnTelefono.Caption = "Teléfono";
                 this.columnTelefono.MaxLength = 45;
+                this.columnFecha_de_Creacion.Caption = "Fecha de Creación";
                 this.columnEstado.MaxLength = 45;
             }
             
@@ -21170,8 +21174,8 @@ namespace Gimnasio.dsGimnasioTableAdapters {
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT `idSocio`, `idEstado`, `fechaCreacion`, `Nombre`, `Paterno`, `Materno`, `T" +
-                "elefono`, `Observaciones`, `idUsuarioCreo`, `foto` FROM `socio` where idSocio=@i" +
-                "dSocio";
+                "elefono`, `Observaciones`, `idUsuarioCreo`, `foto`,`Estado` FROM `socio` INNER J" +
+                "OIN estado ON socio.idEstado = estado.idEstados where idSocio=@idSocio";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@idSocio";
@@ -21879,12 +21883,25 @@ namespace Gimnasio.dsGimnasioTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idSocio, Nombre, Paterno, Materno, Telefono,fechaCreacion, Estado FROM vws" +
                 "ocios where idEstado in(1,2) and idSocio>1000 order by idsocio desc";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        idSocio, Nombre, Paterno, Materno, Telefono, fechaCreacion, Estado\r" +
+                "\nFROM            vwsocios\r\nWHERE        (idEstado IN (1, 2)) AND (idSocio > 1000" +
+                ") AND (idSocio = @idSocio)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idSocio";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idSocio";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21893,6 +21910,18 @@ namespace Gimnasio.dsGimnasioTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsGimnasio.vwsociosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsGimnasio.vwsociosDataTable dataTable = new dsGimnasio.vwsociosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsGimnasio.vwsociosDataTable GetDataByidSocio(int idSocio) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idSocio));
             dsGimnasio.vwsociosDataTable dataTable = new dsGimnasio.vwsociosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -29237,8 +29266,7 @@ namespace Gimnasio.dsGimnasioTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `idSocio`, `NombreSocio`, `Paterno`, `Materno`, `Vencimiento` FROM `gym`.`" +
-                "rptsocios`";
+            this._commandCollection[0].CommandText = "SELECT * FROM `gym`.`rptsocios`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

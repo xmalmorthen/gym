@@ -62,8 +62,31 @@ namespace Gimnasio.Reportes
             {
                 MessageBox.Show(oSocio.getError());
             }
+            else {
+                //try
+                //{
+                //    string colExist = dgvListaSocios.Columns["estatus"].Name;
+                //}
+                //catch (Exception)
+                //{
+                //    dgvListaSocios.Columns.Add("estatus","Estatus");
+                //    dgvListaSocios.Columns["estatus"].SortMode = DataGridViewColumnSortMode.Automatic;
+                //}
 
 
+                //foreach (DataGridViewRow row in dgvListaSocios.Rows)
+                //{
+                //    DateTime Fechavencimiento = DateTime.Parse(row.Cells["vencimiento"].Value.ToString());
+                //    if (DateTime.Compare(Fechavencimiento, DateTime.Now) < 0)
+                //    {
+                //        row.Cells["estatus"].Value = "Vencido";
+                //    }
+                //    else
+                //    {
+                //        row.Cells["estatus"].Value = "Vigente";
+                //    }
+                //}
+            }
         }
 
         private void refrescaListaRegistro()
@@ -226,6 +249,102 @@ namespace Gimnasio.Reportes
         private void button3_Click(object sender, EventArgs e)
         {
             refrescaListaVentaProductos();
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.InitialDirectory = "c:\\";
+            sfd.Filter = "Archivos de excel (*.xlsx)|*.xlsx";
+            sfd.FilterIndex = 1;
+            sfd.RestoreDirectory = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Excel.ExcelUtlity obj = new Excel.ExcelUtlity();
+                    obj.WriteDataTableToExcel((DataTable)dgvListaInventario.DataSource, "Inventario existente", sfd.FileName, "Inventario existente");
+                    MessageBox.Show(this,"Archivo de excel creado en la ubicación [" + sfd.FileName + "]", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this,"Error del Sistema: " + ex.Message,"Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnExpMembresias_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.InitialDirectory = "c:\\";
+            sfd.Filter = "Archivos de excel (*.xlsx)|*.xlsx";
+            sfd.FilterIndex = 1;
+            sfd.RestoreDirectory = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Excel.ExcelUtlity obj = new Excel.ExcelUtlity();
+                    obj.WriteDataTableToExcel((DataTable)dgvListaMembresias.DataSource, "Membresías", sfd.FileName, "Membresías");
+                    MessageBox.Show(this, "Archivo de excel creado en la ubicación [" + sfd.FileName + "]", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, "Error del Sistema: " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnExpSocios_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.InitialDirectory = "c:\\";
+            sfd.Filter = "Archivos de excel (*.xlsx)|*.xlsx";
+            sfd.FilterIndex = 1;
+            sfd.RestoreDirectory = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Excel.ExcelUtlity obj = new Excel.ExcelUtlity();
+                    obj.WriteDataTableToExcel((DataTable)dgvListaSocios.DataSource, "Socios", sfd.FileName, "Socios");
+                    MessageBox.Show(this, "Archivo de excel creado en la ubicación [" + sfd.FileName + "]", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, "Error del Sistema: " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }            
+        }
+
+        private void dgvListaSocios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            int vigentes = 0, vencidos = 0, totalSocios = 0;
+            foreach (DataGridViewRow Myrow in dgvListaSocios.Rows)
+            {
+                DateTime Fechavencimiento = DateTime.Parse(Myrow.Cells["vencimiento"].Value.ToString());
+
+                if (DateTime.Compare(Fechavencimiento, DateTime.Now) < 0)
+                {
+                    Myrow.DefaultCellStyle.BackColor = Color.Salmon;
+                    vencidos++;
+                }
+                else
+                {
+                    vigentes++;
+                    Myrow.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                }
+                totalSocios++;
+            }
+            label13.Text = vigentes.ToString();
+            label14.Text = vencidos.ToString();
+            label16.Text = totalSocios.ToString();
         }
 
   

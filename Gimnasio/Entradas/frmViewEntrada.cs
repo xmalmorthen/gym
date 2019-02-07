@@ -41,7 +41,7 @@ namespace Gimnasio.Entradas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de sistema " + ex.Message);
+                MessageBox.Show(this,"Error de sistema " + ex.Message,"Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -51,7 +51,12 @@ namespace Gimnasio.Entradas
         {
             if (!oEntrada.getDatosDetalle(dgvLista))
             {
-                MessageBox.Show(oEntrada.getError());
+                MessageBox.Show(this, oEntrada.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                dgvLista.Columns[1].HeaderText = "Cantidad";
+                dgvLista.Columns[3].HeaderText = "Costo unitario";
+                dgvLista.Columns[4].HeaderText = "Total";
             }
 
 
@@ -61,13 +66,13 @@ namespace Gimnasio.Entradas
         {
             if (oEntrada.getDatos(id))
             {
-                lblTotal.Text = oEntrada.datos.Total.ToString();
+                lblTotal.Text = string.Format("$ {0}",oEntrada.datos.Total.ToString());
                 lblFecha.Text = oEntrada.datos.fechaCreacion.ToShortDateString();
               
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al cargar los datos " + oEntrada.getError());
+                MessageBox.Show(this, "Ocurrió un problema al cargar los datos " + oEntrada.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }

@@ -34,7 +34,7 @@ namespace Gimnasio.Membresias
                 dgvLista.Columns[dgvLista.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 
             }catch(Exception ex){
-                MessageBox.Show("Error de sistema "+ex.Message);
+                MessageBox.Show(this,"Error de sistema "+ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -51,7 +51,13 @@ namespace Gimnasio.Membresias
         {
             if (!oMembresia.getDatos(dgvLista))
             {
-                MessageBox.Show(oMembresia.getError());
+                MessageBox.Show(this, oMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                dgvLista.Columns[3].HeaderText = "Meses";
+                dgvLista.Columns[4].HeaderText = "Hora de inicio";
+                dgvLista.Columns[5].HeaderText = "Hora final";
+                dgvLista.Columns[6].HeaderText = "Fecha de creación";
             }
 
 
@@ -80,7 +86,7 @@ namespace Gimnasio.Membresias
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -91,7 +97,7 @@ namespace Gimnasio.Membresias
             {
                 if (id == 1)
                 {
-                    MessageBox.Show("No puedes realizar esta acción en la membresia visita");
+                    MessageBox.Show(this, "No puedes realizar esta acción en la membresia visita", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (oMembresia.changeState(2, id))
@@ -100,13 +106,13 @@ namespace Gimnasio.Membresias
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error " + oMembresia.getError());
+                    MessageBox.Show(this, "Ocurrió un error " + oMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -117,7 +123,7 @@ namespace Gimnasio.Membresias
             {
                 if (id == 1)
                 {
-                    MessageBox.Show("No puedes realizar esta acción en la membresia visita");
+                    MessageBox.Show(this, "No puedes realizar esta acción en la membresia visita", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (oMembresia.changeState(1, id))
@@ -126,13 +132,13 @@ namespace Gimnasio.Membresias
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error " + oMembresia.getError());
+                    MessageBox.Show(this, "Ocurrió un error " + oMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -143,10 +149,10 @@ namespace Gimnasio.Membresias
             {
                 if (id == 1)
                 {
-                    MessageBox.Show("No puedes eliminar la membresia visita");
+                    MessageBox.Show(this, "No puedes eliminar la membresia visita", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (MessageBox.Show("Estas seguro de eliminar el registro seleccionado", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show(this,"Estas seguro de eliminar el registro seleccionado", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     if (oMembresia.changeState(3, id))
                     {
@@ -154,14 +160,14 @@ namespace Gimnasio.Membresias
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrio un error " + oMembresia.getError());
+                        MessageBox.Show(this, "Ocurrió un error " + oMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -28,15 +28,13 @@ namespace Gimnasio.Usuarios
         #region FUNCIONES COMUNES
         private void interfaz()
         {
-            lblTitle.Text = "Usuarios";
+            lblTitle.Text = "Registro de usuarios del sistema";
 
             dgvLista.Columns[0].Visible = false;
     
             if (dgvLista.Rows.Count > 0)
             {
-              
                 dgvLista.Columns[dgvLista.Columns.Count-1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
             }
         }
         private void addEventos()
@@ -81,7 +79,7 @@ namespace Gimnasio.Usuarios
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this,"Debe seleccionar una fila","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -96,13 +94,13 @@ namespace Gimnasio.Usuarios
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error "+oUsuario.getError());
+                    MessageBox.Show(this,"Ocurrió un error "+oUsuario.getError(),"Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe seleccionar una fila", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -117,13 +115,13 @@ namespace Gimnasio.Usuarios
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error " + oUsuario.getError());
+                    MessageBox.Show(this, "Ocurrió un error " + oUsuario.getError(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe seleccionar una fila", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -132,7 +130,7 @@ namespace Gimnasio.Usuarios
             int id = Utilidades.OperacionesFormulario.getId(dgvLista);
             if (id > 0)
             {
-                if (MessageBox.Show("Estas seguro de eliminar el registro seleccionado", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show(this,"Estas seguro de eliminar el registro seleccionado", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (oUsuario.changeState(3, id))
                     {
@@ -140,14 +138,14 @@ namespace Gimnasio.Usuarios
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrio un error " + oUsuario.getError());
+                        MessageBox.Show(this, "Ocurrió un error " + oUsuario.getError(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe seleccionar una fila", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

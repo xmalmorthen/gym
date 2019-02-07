@@ -33,7 +33,7 @@ namespace Gimnasio.Utilidades
                 }
                 else
                 {
-                    error = "Usuario o password incorrecto";
+                    error = "Usuario y/o contraseña incorrecto(s)";
                 }
 
             }catch(Exception ex){

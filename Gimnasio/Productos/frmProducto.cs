@@ -40,7 +40,7 @@ namespace Gimnasio.Productos
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al cargar los datos " + oProducto.getError());
+                MessageBox.Show(this,"Ocurrió un problema al cargar los datos " + oProducto.getError(),"Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }
@@ -64,22 +64,22 @@ namespace Gimnasio.Productos
                 //validaciones
                 if (txtNombre.Text.Trim().Equals("") || txtPrecio.Text.Trim().Equals("") || txtCosto.Text.Equals(""))
                 {
-                    MessageBox.Show("Nombre, Precio y Costo son obligatorios");
+                    MessageBox.Show(this, "Nombre, Precio y Costo son obligatorios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!ExpresionesRegulares.RegEX.isDecimal(txtPrecio.Text.Trim()))
                 {
-                    MessageBox.Show("El precio debe ser un numero valido, no se permiten letras ni caracteres que no sean numeros");
+                    MessageBox.Show(this, "El precio debe ser un número valido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!ExpresionesRegulares.RegEX.isDecimal(txtCosto.Text.Trim()))
                 {
-                    MessageBox.Show("El costo debe ser un numero valido, no se permiten letras ni caracteres que no sean numeros");
+                    MessageBox.Show(this, "El costo debe ser un número valido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (decimal.Parse(txtPrecio.Text.ToString()) <= decimal.Parse(txtCosto.Text.ToString()))
                 {
-                    MessageBox.Show("El costo debe ser menor que el precio al publico");
+                    MessageBox.Show(this, "El costo debe ser menor que el precio al público", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -91,7 +91,7 @@ namespace Gimnasio.Productos
                 oProducto.idUsuarioLog = Utilidades.clsUsuario.idUsuario;
                 if (oProducto.add())
                 {
-                    MessageBox.Show("Registro agregado con exito");
+                    MessageBox.Show(this, "Registro agregado con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
@@ -100,7 +100,7 @@ namespace Gimnasio.Productos
             }
             catch (Exception EX)
             {
-                MessageBox.Show("Ocurrio un error de sistema " + EX.Message);
+                MessageBox.Show(this, "Ocurrió un error de sistema " + EX.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -112,22 +112,22 @@ namespace Gimnasio.Productos
                 //validaciones
                 if (txtNombre.Text.Trim().Equals("") || txtPrecio.Text.Trim().Equals("") || txtCosto.Text.Equals(""))
                 {
-                    MessageBox.Show("Nombre, Precio y Costo son obligatorios");
+                    MessageBox.Show(this, "Nombre, Precio y Costo son obligatorios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!ExpresionesRegulares.RegEX.isDecimal(txtPrecio.Text.Trim()))
                 {
-                    MessageBox.Show("El precio debe ser un numero valido, no se permiten letras ni caracteres que no sean numeros");
+                    MessageBox.Show(this, "El precio debe ser un número valido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!ExpresionesRegulares.RegEX.isDecimal(txtCosto.Text.Trim()))
                 {
-                    MessageBox.Show("El costo debe ser un numero valido, no se permiten letras ni caracteres que no sean numeros");
+                    MessageBox.Show(this, "El costo debe ser un número valido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (decimal.Parse(txtPrecio.Text.ToString()) <= decimal.Parse(txtCosto.Text.ToString()))
                 {
-                    MessageBox.Show("El costo debe ser menor que el precio al publico");
+                    MessageBox.Show(this, "El costo debe ser menor que el precio al público", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -139,7 +139,7 @@ namespace Gimnasio.Productos
                 oProducto.idUsuarioLog = Utilidades.clsUsuario.idUsuario;
                 if (oProducto.edit(id))
                 {
-                    MessageBox.Show("Registro modificado con exito");
+                    MessageBox.Show(this, "Registro modificado con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
@@ -148,7 +148,25 @@ namespace Gimnasio.Productos
             }
             catch (Exception EX)
             {
-                MessageBox.Show("Ocurrio un error de sistema " + EX.Message);
+                MessageBox.Show(this, "Ocurrió un error de sistema " + EX.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        Boolean cancel = false;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.cancel = true;
+            this.Close();
+        }
+
+        private void frmProducto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.cancel)
+            {
+                if (MessageBox.Show(this, "Estás seguro de cancelar", "Confirma cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
             }
         }
 

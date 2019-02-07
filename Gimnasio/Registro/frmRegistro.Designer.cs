@@ -30,341 +30,360 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistro));
-            this.panelEncabezado = new System.Windows.Forms.Panel();
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMaterno = new System.Windows.Forms.TextBox();
-            this.txtPaterno = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pbFoto = new System.Windows.Forms.PictureBox();
-            this.lblNombreGimnacio = new System.Windows.Forms.Label();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.lblDomicilio = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.lblRFC = new System.Windows.Forms.Label();
-            this.lblMensaje = new System.Windows.Forms.Label();
-            this.lblVencimiento = new System.Windows.Forms.Label();
-            this.panelFoot = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
-            this.panelEncabezado.SuspendLayout();
-            this.panelContenedor.SuspendLayout();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.tmTime = new System.Windows.Forms.Timer(this.components);
+            this.tmHideData = new System.Windows.Forms.Timer(this.components);
+            this.tmNoMember = new System.Windows.Forms.Timer(this.components);
+            this.pnlNotFound = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblVencimiento = new System.Windows.Forms.Label();
+            this.lblBienvenido = new System.Windows.Forms.Label();
+            this.lblPeriodo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
+            this.pnlRestanteMembresia = new System.Windows.Forms.Panel();
+            this.lblRestanteMembresia = new System.Windows.Forms.Label();
+            this.panelMiembro = new System.Windows.Forms.Panel();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.axWindowsMediaPlayer2 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.pnlNotFound.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            this.panelFoot.SuspendLayout();
+            this.pnlRestanteMembresia.SuspendLayout();
+            this.panelMiembro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelEncabezado
+            // lblHora
             // 
-            this.panelEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.panelEncabezado.Controls.Add(this.lblMensaje);
-            this.panelEncabezado.Controls.Add(this.lblRFC);
-            this.panelEncabezado.Controls.Add(this.lblTelefono);
-            this.panelEncabezado.Controls.Add(this.lblDomicilio);
-            this.panelEncabezado.Controls.Add(this.pbLogo);
-            this.panelEncabezado.Controls.Add(this.lblNombreGimnacio);
-            this.panelEncabezado.Location = new System.Drawing.Point(39, 29);
-            this.panelEncabezado.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.panelEncabezado.Name = "panelEncabezado";
-            this.panelEncabezado.Size = new System.Drawing.Size(912, 203);
-            this.panelEncabezado.TabIndex = 40;
+            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHora.BackColor = System.Drawing.Color.Transparent;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblHora.Location = new System.Drawing.Point(907, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(517, 46);
+            this.lblHora.TabIndex = 41;
+            this.lblHora.Text = "{00:00:00}";
+            this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panelContenedor
+            // lblFecha
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.panelContenedor.Controls.Add(this.lblVencimiento);
-            this.panelContenedor.Controls.Add(this.label3);
-            this.panelContenedor.Controls.Add(this.pbFoto);
-            this.panelContenedor.Controls.Add(this.txtMaterno);
-            this.panelContenedor.Controls.Add(this.txtPaterno);
-            this.panelContenedor.Controls.Add(this.txtNombre);
-            this.panelContenedor.Controls.Add(this.label8);
-            this.panelContenedor.Controls.Add(this.label2);
-            this.panelContenedor.Controls.Add(this.label5);
-            this.panelContenedor.Controls.Add(this.txtClave);
-            this.panelContenedor.Controls.Add(this.label1);
-            this.panelContenedor.Location = new System.Drawing.Point(39, 246);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(912, 423);
-            this.panelContenedor.TabIndex = 41;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblFecha.Location = new System.Drawing.Point(12, 9);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(164, 46);
+            this.lblFecha.TabIndex = 40;
+            this.lblFecha.Text = "{Fecha}";
             // 
-            // label3
+            // tmTime
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 360);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 29);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Vencimiento";
+            this.tmTime.Enabled = true;
+            this.tmTime.Interval = 1000;
+            this.tmTime.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // txtMaterno
+            // tmHideData
             // 
-            this.txtMaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaterno.Location = new System.Drawing.Point(256, 227);
-            this.txtMaterno.Name = "txtMaterno";
-            this.txtMaterno.ReadOnly = true;
-            this.txtMaterno.Size = new System.Drawing.Size(324, 28);
-            this.txtMaterno.TabIndex = 34;
-            this.txtMaterno.TabStop = false;
+            this.tmHideData.Interval = 8000;
+            this.tmHideData.Tick += new System.EventHandler(this.tmHideData_Tick);
             // 
-            // txtPaterno
+            // tmNoMember
             // 
-            this.txtPaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPaterno.Location = new System.Drawing.Point(256, 175);
-            this.txtPaterno.Name = "txtPaterno";
-            this.txtPaterno.ReadOnly = true;
-            this.txtPaterno.Size = new System.Drawing.Size(324, 28);
-            this.txtPaterno.TabIndex = 33;
-            this.txtPaterno.TabStop = false;
+            this.tmNoMember.Interval = 3000;
+            this.tmNoMember.Tick += new System.EventHandler(this.tmNoMember_Tick);
             // 
-            // txtNombre
+            // pnlNotFound
             // 
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Location = new System.Drawing.Point(256, 119);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(324, 28);
-            this.txtNombre.TabIndex = 32;
-            this.txtNombre.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 226);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(212, 29);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Apellido Materno";
+            this.pnlNotFound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlNotFound.BackColor = System.Drawing.Color.Transparent;
+            this.pnlNotFound.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNotFound.Controls.Add(this.label2);
+            this.pnlNotFound.Location = new System.Drawing.Point(165, 206);
+            this.pnlNotFound.Name = "pnlNotFound";
+            this.pnlNotFound.Size = new System.Drawing.Size(1132, 250);
+            this.pnlNotFound.TabIndex = 44;
+            this.pnlNotFound.Visible = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 175);
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(8, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 29);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Apellido Paterno";
+            this.label2.Size = new System.Drawing.Size(1114, 243);
+            this.label2.TabIndex = 44;
+            this.label2.Text = "No existe un socio con esa clave";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lblName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 125);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 29);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Nombre";
-            // 
-            // txtClave
-            // 
-            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(669, 23);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(200, 47);
-            this.txtClave.TabIndex = 1;
-            this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
-            this.txtClave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClave_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(385, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Clave de Socio";
-            // 
-            // pbFoto
-            // 
-            this.pbFoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbFoto.BackgroundImage")));
-            this.pbFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbFoto.InitialImage = null;
-            this.pbFoto.Location = new System.Drawing.Point(618, 119);
-            this.pbFoto.Name = "pbFoto";
-            this.pbFoto.Size = new System.Drawing.Size(267, 232);
-            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFoto.TabIndex = 37;
-            this.pbFoto.TabStop = false;
-            // 
-            // lblNombreGimnacio
-            // 
-            this.lblNombreGimnacio.AutoSize = true;
-            this.lblNombreGimnacio.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreGimnacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblNombreGimnacio.Location = new System.Drawing.Point(21, 20);
-            this.lblNombreGimnacio.Name = "lblNombreGimnacio";
-            this.lblNombreGimnacio.Size = new System.Drawing.Size(525, 47);
-            this.lblNombreGimnacio.TabIndex = 0;
-            this.lblNombreGimnacio.Text = "NOMBRE DEL GIMNASIO";
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Location = new System.Drawing.Point(669, 3);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(240, 197);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 1;
-            this.pbLogo.TabStop = false;
-            // 
-            // lblDomicilio
-            // 
-            this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomicilio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblDomicilio.Location = new System.Drawing.Point(25, 67);
-            this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(87, 24);
-            this.lblDomicilio.TabIndex = 2;
-            this.lblDomicilio.Text = "Domicilio";
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTelefono.Location = new System.Drawing.Point(25, 91);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(85, 24);
-            this.lblTelefono.TabIndex = 3;
-            this.lblTelefono.Text = "Telefono";
-            // 
-            // lblRFC
-            // 
-            this.lblRFC.AutoSize = true;
-            this.lblRFC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRFC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblRFC.Location = new System.Drawing.Point(28, 115);
-            this.lblRFC.Name = "lblRFC";
-            this.lblRFC.Size = new System.Drawing.Size(30, 24);
-            this.lblRFC.TabIndex = 4;
-            this.lblRFC.Text = "rfc";
-            // 
-            // lblMensaje
-            // 
-            this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblMensaje.Location = new System.Drawing.Point(28, 139);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(82, 24);
-            this.lblMensaje.TabIndex = 5;
-            this.lblMensaje.Text = "Mensaje";
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(238, 90);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(1164, 208);
+            this.lblName.TabIndex = 27;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblVencimiento
             // 
             this.lblVencimiento.AutoSize = true;
             this.lblVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVencimiento.Location = new System.Drawing.Point(251, 360);
+            this.lblVencimiento.Location = new System.Drawing.Point(256, 365);
             this.lblVencimiento.Name = "lblVencimiento";
             this.lblVencimiento.Size = new System.Drawing.Size(0, 29);
             this.lblVencimiento.TabIndex = 39;
             // 
-            // panelFoot
+            // lblBienvenido
             // 
-            this.panelFoot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.panelFoot.Controls.Add(this.lblHora);
-            this.panelFoot.Controls.Add(this.lblFecha);
-            this.panelFoot.Location = new System.Drawing.Point(36, 683);
-            this.panelFoot.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.panelFoot.Name = "panelFoot";
-            this.panelFoot.Size = new System.Drawing.Size(912, 83);
-            this.panelFoot.TabIndex = 41;
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.Location = new System.Drawing.Point(6, 5);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(393, 76);
+            this.lblBienvenido.TabIndex = 40;
+            this.lblBienvenido.Text = "Bienvenid@";
             // 
-            // timer1
+            // lblPeriodo
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.lblPeriodo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeriodo.Location = new System.Drawing.Point(8, 352);
+            this.lblPeriodo.Name = "lblPeriodo";
+            this.lblPeriodo.Size = new System.Drawing.Size(1394, 92);
+            this.lblPeriodo.TabIndex = 38;
+            this.lblPeriodo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblFecha
+            // label4
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblFecha.Location = new System.Drawing.Point(13, 26);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(85, 29);
-            this.lblFecha.TabIndex = 40;
-            this.lblFecha.Text = "Fecha";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(4, 301);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(421, 46);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Periodo de membresía";
             // 
-            // lblHora
+            // label1
             // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblHora.Location = new System.Drawing.Point(644, 26);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(172, 42);
-            this.lblHora.TabIndex = 41;
-            this.lblHora.Text = "00:00:00";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(902, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(304, 46);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Clave de Socio";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtClave
+            // 
+            this.txtClave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClave.ForeColor = System.Drawing.Color.Red;
+            this.txtClave.Location = new System.Drawing.Point(1202, 8);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(201, 68);
+            this.txtClave.TabIndex = 0;
+            this.txtClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtClave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClave_KeyDown);
+            this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_KeyPress);
+            // 
+            // pbFoto
+            // 
+            this.pbFoto.BackgroundImage = global::Gimnasio.Properties.Resources.iconfinder_user_male_172625;
+            this.pbFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbFoto.InitialImage = null;
+            this.pbFoto.Location = new System.Drawing.Point(12, 88);
+            this.pbFoto.Name = "pbFoto";
+            this.pbFoto.Size = new System.Drawing.Size(210, 210);
+            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFoto.TabIndex = 37;
+            this.pbFoto.TabStop = false;
+            // 
+            // pnlRestanteMembresia
+            // 
+            this.pnlRestanteMembresia.BackColor = System.Drawing.Color.Transparent;
+            this.pnlRestanteMembresia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlRestanteMembresia.Controls.Add(this.lblRestanteMembresia);
+            this.pnlRestanteMembresia.Location = new System.Drawing.Point(424, 243);
+            this.pnlRestanteMembresia.Name = "pnlRestanteMembresia";
+            this.pnlRestanteMembresia.Size = new System.Drawing.Size(582, 100);
+            this.pnlRestanteMembresia.TabIndex = 43;
+            this.pnlRestanteMembresia.Visible = false;
+            // 
+            // lblRestanteMembresia
+            // 
+            this.lblRestanteMembresia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRestanteMembresia.BackColor = System.Drawing.Color.Transparent;
+            this.lblRestanteMembresia.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRestanteMembresia.ForeColor = System.Drawing.Color.Red;
+            this.lblRestanteMembresia.Location = new System.Drawing.Point(6, 5);
+            this.lblRestanteMembresia.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblRestanteMembresia.Name = "lblRestanteMembresia";
+            this.lblRestanteMembresia.Size = new System.Drawing.Size(566, 88);
+            this.lblRestanteMembresia.TabIndex = 44;
+            this.lblRestanteMembresia.Text = "{RestanteMembresia}";
+            this.lblRestanteMembresia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelMiembro
+            // 
+            this.panelMiembro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMiembro.BackColor = System.Drawing.Color.Transparent;
+            this.panelMiembro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMiembro.Controls.Add(this.pnlRestanteMembresia);
+            this.panelMiembro.Controls.Add(this.pbFoto);
+            this.panelMiembro.Controls.Add(this.txtClave);
+            this.panelMiembro.Controls.Add(this.label1);
+            this.panelMiembro.Controls.Add(this.label4);
+            this.panelMiembro.Controls.Add(this.lblPeriodo);
+            this.panelMiembro.Controls.Add(this.lblBienvenido);
+            this.panelMiembro.Controls.Add(this.lblVencimiento);
+            this.panelMiembro.Controls.Add(this.lblName);
+            this.panelMiembro.Controls.Add(this.shapeContainer1);
+            this.panelMiembro.Location = new System.Drawing.Point(12, 69);
+            this.panelMiembro.Margin = new System.Windows.Forms.Padding(5);
+            this.panelMiembro.Name = "panelMiembro";
+            this.panelMiembro.Padding = new System.Windows.Forms.Padding(5);
+            this.panelMiembro.Size = new System.Drawing.Size(1412, 446);
+            this.panelMiembro.TabIndex = 41;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(5, 5);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2,
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(1400, 434);
+            this.shapeContainer1.TabIndex = 41;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 7;
+            this.lineShape2.X2 = 723;
+            this.lineShape2.Y1 = 342;
+            this.lineShape2.Y2 = 342;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 7;
+            this.lineShape1.X2 = 723;
+            this.lineShape1.Y1 = 78;
+            this.lineShape1.Y2 = 78;
+            // 
+            // axWindowsMediaPlayer2
+            // 
+            this.axWindowsMediaPlayer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.axWindowsMediaPlayer2.Enabled = true;
+            this.axWindowsMediaPlayer2.Location = new System.Drawing.Point(1414, 517);
+            this.axWindowsMediaPlayer2.Name = "axWindowsMediaPlayer2";
+            this.axWindowsMediaPlayer2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer2.OcxState")));
+            this.axWindowsMediaPlayer2.Size = new System.Drawing.Size(10, 357);
+            this.axWindowsMediaPlayer2.TabIndex = 45;
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(12, 517);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(10, 357);
+            this.axWindowsMediaPlayer1.TabIndex = 46;
             // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackgroundImage = global::Gimnasio.Properties.Resources.backgroundAlpha15percent;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1436, 874);
-            this.Controls.Add(this.panelFoot);
-            this.Controls.Add(this.panelContenedor);
-            this.Controls.Add(this.panelEncabezado);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.Controls.Add(this.axWindowsMediaPlayer2);
+            this.Controls.Add(this.pnlNotFound);
+            this.Controls.Add(this.lblHora);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.panelMiembro);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRegistro";
-            this.Text = "Registro";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Text = "Control de Ingreso";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRegistro_FormClosing);
             this.Load += new System.EventHandler(this.frmRegistro_Load);
             this.SizeChanged += new System.EventHandler(this.frmRegistro_SizeChanged);
-            this.panelEncabezado.ResumeLayout(false);
-            this.panelEncabezado.PerformLayout();
-            this.panelContenedor.ResumeLayout(false);
-            this.panelContenedor.PerformLayout();
+            this.pnlNotFound.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            this.panelFoot.ResumeLayout(false);
-            this.panelFoot.PerformLayout();
+            this.pnlRestanteMembresia.ResumeLayout(false);
+            this.panelMiembro.ResumeLayout(false);
+            this.panelMiembro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelEncabezado;
-        private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pbFoto;
-        private System.Windows.Forms.TextBox txtMaterno;
-        private System.Windows.Forms.TextBox txtPaterno;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblNombreGimnacio;
-        private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.Label lblDomicilio;
-        private System.Windows.Forms.Label lblRFC;
-        private System.Windows.Forms.Label lblMensaje;
-        private System.Windows.Forms.Label lblVencimiento;
-        private System.Windows.Forms.Panel panelFoot;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer tmTime;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Timer tmHideData;
+        private System.Windows.Forms.Timer tmNoMember;
+        private System.Windows.Forms.Panel pnlNotFound;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblVencimiento;
+        private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Label lblPeriodo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.PictureBox pbFoto;
+        private System.Windows.Forms.Panel pnlRestanteMembresia;
+        private System.Windows.Forms.Label lblRestanteMembresia;
+        private System.Windows.Forms.Panel panelMiembro;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer2;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

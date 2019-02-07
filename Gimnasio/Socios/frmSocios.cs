@@ -36,7 +36,7 @@ namespace Gimnasio.Socios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de sistema " + ex.Message);
+                MessageBox.Show(this,"Error de sistema " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -54,10 +54,14 @@ namespace Gimnasio.Socios
         {
             if (!oSocio.getDatos(dgvLista))
             {
-                MessageBox.Show(oSocio.getError());
+                MessageBox.Show(this, oSocio.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else {
+                dgvLista.Columns[2].HeaderText = "Primer apellido";
+                dgvLista.Columns[3].HeaderText = "Segundo apellido";
+                dgvLista.Columns[4].HeaderText = "Teléfono";
+                dgvLista.Columns[5].HeaderText = "Fecha de creación";
             }
-
-
+            
         }
         #endregion
 
@@ -83,7 +87,7 @@ namespace Gimnasio.Socios
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -98,13 +102,13 @@ namespace Gimnasio.Socios
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error " + oSocio.getError());
+                    MessageBox.Show(this, "Ocurrió un error " + oSocio.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -119,13 +123,13 @@ namespace Gimnasio.Socios
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error " + oSocio.getError());
+                    MessageBox.Show(this, "Ocurrió un error " + oSocio.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -134,7 +138,7 @@ namespace Gimnasio.Socios
             int id = Utilidades.OperacionesFormulario.getId(dgvLista);
             if (id > 0)
             {
-                if (MessageBox.Show("Estas seguro de eliminar el registro seleccionado", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show(this,"Estas seguro de eliminar el registro seleccionado", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     if (oSocio.changeState(3, id))
                     {
@@ -142,14 +146,14 @@ namespace Gimnasio.Socios
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrio un error " + oSocio.getError());
+                        MessageBox.Show(this, "Ocurrió un error " + oSocio.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -170,7 +174,7 @@ namespace Gimnasio.Socios
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

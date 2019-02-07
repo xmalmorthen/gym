@@ -118,8 +118,79 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-
-  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\icons\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backgroundAlpha30percent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\backgroundAlpha30percent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_user_male3_172627" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_user_male3_172627.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_plus_172525" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_plus_172525.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_logo_brand_brands_logos_excel_1907184" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_logo_brand_brands_logos_excel_1907184.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_user_male_172625" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_user_male_172625.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_45_Menu_106200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_45_Menu_106200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_18_Close_106227" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_18_Close_106227.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_group_172474" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_group_172474.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_visible_172630" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_visible_172630.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_put_out_172532" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_put_out_172532.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backgroundAlpha15percent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\backgroundAlpha15percent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_settings2_172549" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_settings2_172549.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_put_in_172531" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_put_in_172531.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_minus_172505" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_minus_172505.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_money_172506" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_money_172506.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_shopping_cart_loaded_172553" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_shopping_cart_loaded_172553.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_news_172514" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_news_172514.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_thumb_up_172598" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_thumb_up_172598.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_edit_172462" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_edit_172462.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_thumb_down_172597" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_thumb_down_172597.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_54_Settings_106187" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_54_Settings_106187.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_settings_172548" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_settings_172548.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_copy_172587" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_copy_172587.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfinder_search_172546" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\iconfinder_search_172546.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

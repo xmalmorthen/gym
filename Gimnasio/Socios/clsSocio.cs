@@ -60,6 +60,28 @@ namespace Gimnasio.Socios
             return exito;
         }
 
+        public bool socioActivo(int id)
+        {
+            clear();
+            bool exito = false;
+            try
+            {
+                dsGimnasioTableAdapters.socioTableAdapter ta = new dsGimnasioTableAdapters.socioTableAdapter();
+                dsGimnasio.socioDataTable dt = ta.GetDataById(id);
+                if (dt.Rows.Count > 0)
+                {
+                    datos = (dsGimnasio.socioRow)dt.Rows[0];
+                    exito = datos.idEstado == 2 ? false : true;
+                }
+            }
+            catch (Exception ex)
+            {
+                error.Add(ex.Message);
+            }
+
+            return exito;
+        }
+
         public override bool add()
         {
             clear();

@@ -117,4 +117,139 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="lineShape3.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-1, 26, 792, 0</value>
+  </metadata>
+  <metadata name="lineShape3.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-1, 26</value>
+  </metadata>
+  <metadata name="lineShape3.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>792, 0</value>
+  </metadata>
+  <metadata name="lineShape2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-4, 26, 656, 0</value>
+  </metadata>
+  <metadata name="lineShape2.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-4, 26</value>
+  </metadata>
+  <metadata name="lineShape2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>656, 0</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>127, 17</value>
+  </metadata>
+  <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-5, 25, 384, 0</value>
+  </metadata>
+  <metadata name="lineShape1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-5, 25</value>
+  </metadata>
+  <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>384, 0</value>
+  </metadata>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAm
+        DwAAAk1TRnQBSQFMAgEBBgEAATgBAAE4AQABEAEAARABAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABIAMAAQEBAAEQBgABEB4AAf8BfwF7AW8B9wFeAb0BdwH/AX8BnAFzAfcBXgF7AW8B/wF/bgAB/wF/
+        AdYBWgE5AWcBcwFOAXsBbwFzAU4BOQFnAbUBVgH/AX9uAAHeAXsBtQFWAfcBXgFaAWsBewFvAVoBawHW
+        AVoBnAFzbgAB/wF/AXsBbwHeAXseAAHeAXsB3gF7WAAB/wF/AbUBVgH3AV4BOQFnATkBZwE5AWcBOQFn
+        ARgBYwH/AX8KAAH/AX8BvQF3ATkBZwFzAU4BUgFKAXMBTgFSAUoBGAFjAZwBcwH/AX9QAAHeAXsB9wFe
+        Ab0BdwG9AXcBvQF3Ab0BdwG9AXcBOQFnAVoBawYAAf8BfwHeAXsBWgFrATkBZwG9AXcBOQFnATkBZwE5
+        AWcBWgFrAZwBcwF7AW8BOQFnAb0Bd04AAb0BdwE5AWcB/wF/CAAB/wF/AdYBWgH/AX8EAAG9AXcBOQFn
+        Ad4BewIAAfcBXgG9AXcB/wF/Af8BfwHeAXsBOQFnAd4BewH/AX8BewFvAXsBbwH/AX9KAAF7AW8BnAFz
+        DAABWgFrAb0BdwIAAd4BewG1AVYEAAE5AWcBvQF3Af8BfwFzAU4BzgE5Ad4BewHeAXsBWgFrBAABWgFr
+        AZwBc0oAARgBYwHeAXsEAAHeAXsB3gF7BAABvQF3AVoBawH/AX8B3gF7AfcBXgH/AX8B/wF/AVIBSgHe
+        AXsBGAFjASEBBAIAATEBRgH/AX8B1gFaAgAB/wF/AVoBawG9AXdIAAH/AX8BtQFWAf8BfwQAAb0BdwFa
+        AWsEAAH/AX8BOQFnAf8BfwIAAd4BewFaAWsBvQF3AbUBVgHeAXsBWgFrAWMBDAIAAbUBVgH/AX8BGAFj
+        Ab0BdwFaAWsBvQF3Af8Bf0gAAd4BewH3AV4GAAG9AXcBWgFrBAAB/wF/AVoBawG9AXcEAAH/AX8BewFv
+        Ae8BPQG1AVYB3gF7AZwBcwFaAWsB3gF7ARgBYwEQAUIBOQFnAf8Bf0wAARgBYwGcAXMGAAG9AXcBWgFr
+        BgAB/wF/Af8BfwgAAf8BfwGUAVIBawEtARABQgFSAUoBawEtAVIBSgHeAXtOAAH/AX8BMQFGAf8BfwIA
+        Af8BfwIAAb0BdwFaAWsB/wF/FgAB/wF/Ad4Be04AAd4BewH/AX8CAAH/AX8BUgFKBAAB/wF/AZwBcwG9
+        AXcBGAFjAXsBb2gAAWsBLQGUAVIBOQFnAdYBWgHeAXsEAAH/AX8BewFvAbUBVgFzAU4BvQF3aAABnAFz
+        AZwBcwG9AXcB/wF/CgABWgFrAXsBb3YAAf8BfwF7AW8B9wFeAb0BdwH/AX8BnAFzAfcBXgF7AW8B/wF/
+        BAAB3gF7ATkBZwGUAVIBcwFOAXMBTgFzAU4BcwFOAXMBTgFzAU4BcwFOAXMBTgGUAVIBewFvAd4BewH/
+        AX8B3gF7Ad4BewHeAXsB3gF7Ad4BewHeAXsB3gF7Ad4BewHeAXsB3gF7Ad4BewHeAXsB3gF7Af8BfwQA
+        Af8BfwGcAXMB3gF7Af8BfyQAAf8BfwHWAVoBOQFnAXMBTgF7AW8BcwFOATkBZwG1AVYB/wF/AgAB3gF7
+        AZQBUgE5AWcBWgFrAVoBawFaAWsBWgFrAVoBawFaAWsBWgFrARgBYwFSAUoBGAFjAZwBcwFaAWsB3gF7
+        AXMBTgH3AV4BOQFnATkBZwE5AWcBOQFnATkBZwE5AWcBOQFnATkBZwE5AWcB9wFeAXMBTgH/AX8EAAH/
+        AX8B5wEcASkBJQH3AV4B/wF/IgAB3gF7AbUBVgH3AV4BWgFrAXsBbwFaAWsB1gFaAZwBcwQAAZQBUgG1
+        AVYBvQF3AXsBbwF7AW8B/wF/Ad4BewHeAXsB3gF7Af8BfwGcAXMBewFvBAABvQF3ARgBYwGcAXMBOQFn
+        Af8BfwH/AX8B/wF/Af8BfwH/AX8B/wF/Af8BfwH/AX8B/wF/AbUBVgExAUYBGAFjARgBYwFaAWsCAAHO
+        ATkBlAFSAd4BewG1AVYB/wF/HgAB/wF/AXsBbwHeAXsQAAFrAS0BewFvAZwBcwE5AWcBOQFnAb0BdwHW
+        AVoBtQFWAbUBVgHeAXsBWgFrAd4BewGcAXMBWgFrAd4BewG1AVYCAAF7AW8BcwFOAb0BdwoAAb0BdwFz
+        AU4BGAFjAb0BdwG9AXcBnAJzAU4CAAG9AXcBWgFrBAABtQFWAf8BfxwAAf8BfwG1AVYB9wFeATkBZwE5
+        AWcBOQFnATkBZwE5AWcB/wF/BAABKQElAVoBawEYAWMBUgFKAVIBSgG9AXcB1gFaAZQBUgGUAVIB3gF7
+        ATkBZwG9AXcBnAFzATkBZwH/AX8B9wFeBAAB3gF7ARgBYwFaAWsB/wF/AgAB/wF/AVoBawEYAWMB3gF7
+        AgAB/wF/Ad4BewFaAWsBvQF3AgAB/wF/AXsBbwGcAXMCAAHeAXsBOQFnAf8BfxoAAd4BewH3AV4BvQF3
+        Ab0BdwG9AXcBvQF3Ab0BdwGcAXMB9wFeBAABKQElAXsBbwF7AW8BGAFjARgBYwHeAXsBGAFjAfcBXgH3
+        AV4B/wF/ATkBZwG9AXcBnAFzATkBZwH/AX8B9wFeCAABGAFjAb0BdwIAAb0BdwH3AV4EAAH/AX8BWgFr
+        AVoBawHeAXsB/wF/BAAB/wF/AXsBbwF7AW8CAAHeAXsBWgFrAf8BfxgAAb0BdwE5AWcB/wF/CgAB9wFe
+        Af8BfwIAASkBJQFaAWsBOQFnAZQBUgGUAVIBvQF3AdYBWgGUAVIBlAFSAd4BewE5AWcBvQF3AZwBcwE5
+        AWcB/wF/AfcBXggAAVoBawGcAXMCAAGcAXMBWgFrBAABewFvAVoBawH/AX8KAAH/AX8BnAFzAVoBawIA
+        Ad4BewG1AVYB/wF/FgABewFvAZwBcwwAAXsBbwGcAXMCAAEpASUBewFvAb0BdwF7AW8BewFvAd4BewGc
+        AXMBewFvAXsBbwH/AX8BOQFnAb0BdwGcAXMBOQFnAf8BfwH3AV4IAAFKASkEAAH/AX8BSgEpBAABewFv
+        AZwBcxAAAZwBcwF7AW8EAAG1AVYB/wF/FAABGAFjAd4BewwAAd4BewE5AWcB/wF/ASkBJQFaAWsBOQFn
+        AbUBVgG1AVYBvQF3AdYBWgG1AVYBtQFWAf8BfwE5AWcBvQF3AZwBcwE5AWcB/wF/AfcBXgQAAf8BfwE5
+        AWcB3gF7BgABvQF3ATkBZwH/AX8B/wF/AVIBSgH/AX8OAAH/AX8BewFvAZwBcwIAAd4BewE5AWcB/wF/
+        EAAB/wF/AZQBUgH/AX8MAAH/AX8BOQFnAd4BewEpASUBnAFzDgAB/wF/ATkBZwG9AXcBnAFzATkBZwH/
+        AX8B9wFeBAAB/wF/ARgBYwH/AX8GAAH/AX8BGAFjAf8BfwIAARgBYwG9AXcQAAH/AX8BewFvAXsBbwIA
+        Ad4BewFaAWsB/wF/DgABvQF3AUoBKQExAUYBtQFWAbUBVgG1AVYBtQFWATEBRgG1AVYBlAFSAe8BPQG9
+        AXcBKQElAVoBawEYAWMBtQFWAbUBVgG1AVYBtQFWAbUBVgG1AVYB/wF/ATkBZwG9AXcBnAFzATkBZwH/
+        AX8B9wFeBgABtQFWAf8BfwYAAf8BfwHWAVoEAAE5AWcBnAFzEgAB/wF/AZwBcwFaAWsCAAHeAXsBtQFW
+        Af8BfwwAARgBYwF7AW8BewFvAVoBawH/AX8B3gF7AXMBTgGcAXMB/wF/AbUBVgHeAXsB/wF/ASkBJQF7
+        AW8BvQF3AXsBbwF7AW8BewFvAXsBbwF7AW8BewFvAf8BfwE5AWcBvQF3Ab0BdwFaAWsB3gF7ARgBYwQA
+        Af8BfwH3AV4KAAGUAVIB/wF/AgABnAFzATkBZxYAAZwBcwF7AW8EAAHWAVoB/wF/CAAB/wF/ATEBRgH/
+        AX8CAAF7AW8BewFvAXsBbwG1AVYBvQF3AdYBWgHeAXsEAAEpASUBWgFrAXsBbwEYAWMBGAFjARgBYwEY
+        AWMBGAFjARgBYwH/AX8BOQFnAZQBUgH3AV4BUgFKAZQBUgHeAXsGAAEYAWMBvQF3BAAB/wF/Ab0BdwG1
+        AVYB/wF/Af8BfwEYAWMBnAFzFgAB/wF/AXsBbwGcAXMCAAHeAXsBGAFjAf8BfwHeAXsB/wF/AgAB/wF/
+        AVIBSgYAAZwBcwF7AW8B/wF/AXsBbwH/AX8GAAEpASUBnAFzDgAB/wF/ATkBZwGcAXMB3gF7Ad4BewH/
+        AX8B/wF/BgAB3gJ7AW8BWgFrAZwBcwF7AW8B1gFaAfcBXgFaAWsBWgFrAXsBbwH/AX8YAAH/AX8BewFv
+        Ad4BewEYAWMBpQEUAXsBbwFrAS0BlAFSATkBZwHWAVoB3gF7BgAB/wF/Af8BfwIAAf8BfwgAATEBRgHv
+        AT0BcwFOAXMBTgFzAU4BcwFOAXMBTgFzAU4BcwFOAXMBTgFSAUoB3gF7EAAB/wF/Ab0BdwF7AW8BvQF3
+        Af8BfwHeAXsB3gF7Af8Bfx4AAf8BfwGcAXMBhAEQAcYBGAG9AXcBnAFzAZwBcwG9AXcB/wF/cgAB/wF/
+        Af8BfwIAAUIBTQE+BwABPgMAASgDAAFAAwABIAMAAQEBAAEBBgABARYAA/8BAAH8AQEC/wQAAfwBAQL/
+        BAAB/AEDAv8EAAH4Af8B/gF/BAAB+AEDAeABBwQAAfgBAwGAAQMEAAH4AfEBiAUAAvkBMAEMBAAB+QGY
+        AQABCAQAAfEBmAGABQAB8wGYAcABAwQAAfMBnAHwAQ8EAAHiAY8B/gF/BAABJgEPAv8EAAEGAQ8C/wQA
+        AQ8BnwL/BAAB/AEBAYACAAEDAQ8B/wH8AQEDAAEDAQcB/wH8AQMBAAEMAgABgwH/AfgB/wIAAY8BgAGZ
+        Af8B+AEDAgABwgEQAYgB/wH4AQMCAAHyAWABxAF/AfgB+QIAAfIBYwHiAT8C+QIAAfYBZwH5AZ8B+QH4
+        AgABxwEDAfgBjwHxAfgBPwGAAccBEwH8AUcB8AMAAecBMwH+ASMB8AMAAc8BkwH/AZkB4gEDAgAB5gED
+        Af8BiAEnAQcBPwGAAeABAwH/AcABBwEvAQABDwHwAQ8B/wHgAQ8G/wH5Cw==
+</value>
+  </data>
+  <metadata name="lineShape1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-5, 25, 384, 0</value>
+  </metadata>
+  <metadata name="lineShape1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-5, 25</value>
+  </metadata>
+  <metadata name="lineShape1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>384, 0</value>
+  </metadata>
+  <metadata name="lineShape2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-4, 26, 656, 0</value>
+  </metadata>
+  <metadata name="lineShape2.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-4, 26</value>
+  </metadata>
+  <metadata name="lineShape2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>656, 0</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>127, 17</value>
+  </metadata>
+  <metadata name="lineShape3.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-1, 26, 792, 0</value>
+  </metadata>
+  <metadata name="lineShape3.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>-1, 26</value>
+  </metadata>
+  <metadata name="lineShape3.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>792, 0</value>
+  </metadata>
 </root>

@@ -1,0 +1,6 @@
+E:\Proyectos\visual_studio\cSharp\Gym-Hdeleon-.Net\FontAwesomeIcons\bin\Release\FontAwesomeIcons.dll
+E:\Proyectos\visual_studio\cSharp\Gym-Hdeleon-.Net\FontAwesomeIcons\bin\Release\FontAwesomeIcons.pdb
+E:\Proyectos\visual_studio\cSharp\Gym-Hdeleon-.Net\FontAwesomeIcons\obj\Release\FontAwesomeIcons.Properties.Resources.resources
+E:\Proyectos\visual_studio\cSharp\Gym-Hdeleon-.Net\FontAwesomeIcons\obj\Release\FontAwesomeIcons.csproj.GenerateResource.Cache
+E:\Proyectos\visual_studio\cSharp\Gym-Hdeleon-.Net\FontAwesomeIcons\obj\Release\FontAwesomeIcons.dll
+E:\Proyectos\visual_studio\cSharp\Gym-Hdeleon-.Net\FontAwesomeIcons\obj\Release\FontAwesomeIcons.pdb

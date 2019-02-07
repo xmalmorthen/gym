@@ -49,7 +49,7 @@ namespace Gimnasio.Socios
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al cargar los datos " + oSocio.getError());
+                MessageBox.Show(this,"Ocurrió un problema al cargar los datos " + oSocio.getError(),"Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }
@@ -84,9 +84,9 @@ namespace Gimnasio.Socios
             try
             {
                 //validaciones
-                if (txtNombre.Text.Trim().Equals("") || txtPaterno.Text.Trim().Equals("") || txtMaterno.Text.Equals(""))
+                if (txtNombre.Text.Trim().Equals("") || txtPaterno.Text.Trim().Equals(""))
                 {
-                    MessageBox.Show("Nombre, Apellido Paterno y Apellido Materno son obligatorios");
+                    MessageBox.Show(this,"Nombre y Primer apellido son obligatorios", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
               
@@ -102,16 +102,16 @@ namespace Gimnasio.Socios
                 oSocio.idUsuarioLog = Utilidades.clsUsuario.idUsuario;
                 if (oSocio.add())
                 {
-                    MessageBox.Show("Registro agregado con exito");
+                    MessageBox.Show(this, "Registro agregado con éxito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
-                    MessageBox.Show(oSocio.getError());
+                    MessageBox.Show(this, oSocio.getError(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             catch (Exception EX)
             {
-                MessageBox.Show("Ocurrio un error de sistema " + EX.Message);
+                MessageBox.Show(this, "Ocurrió un error de sistema " + EX.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -121,9 +121,9 @@ namespace Gimnasio.Socios
             try
             {
                 //validaciones
-                if (txtNombre.Text.Trim().Equals("") || txtPaterno.Text.Trim().Equals("") || txtMaterno.Text.Equals(""))
+                if (txtNombre.Text.Trim().Equals("") || txtPaterno.Text.Trim().Equals(""))
                 {
-                    MessageBox.Show("Nombre, Apellido Paterno y Apellido Materno son obligatorios");
+                    MessageBox.Show(this, "Nombre y Primer apellido son obligatorios", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -139,16 +139,34 @@ namespace Gimnasio.Socios
                 oSocio.idUsuarioLog = Utilidades.clsUsuario.idUsuario;
                 if (oSocio.edit(id))
                 {
-                    MessageBox.Show("Registro modificado con exito");
+                    MessageBox.Show(this, "Registro modificado con éxito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
-                    MessageBox.Show(oSocio.getError());
+                    MessageBox.Show(this, oSocio.getError(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             catch (Exception EX)
             {
-                MessageBox.Show("Ocurrio un error de sistema " + EX.Message);
+                MessageBox.Show(this, "Ocurrió un error de sistema " + EX.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        Boolean cancel = false;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.cancel = true;
+            this.Close();
+        }
+
+        private void frmSocio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.cancel)
+            {
+                if (MessageBox.Show(this, "Estás seguro de cancelar", "Confirma cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
             }
         }
 

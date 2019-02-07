@@ -41,7 +41,7 @@ namespace Gimnasio.Membresias
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema al cargar los datos " + oMembresia.getError());
+                MessageBox.Show(this,"Ocurrió un problema al cargar los datos " + oMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
         }
@@ -65,12 +65,12 @@ namespace Gimnasio.Membresias
                 //validaciones
                 if (txtNombre.Text.Trim().Equals("") || txtPrecio.Text.Trim().Equals("") || cboMeses.Text.Equals(""))
                 {
-                    MessageBox.Show("Nombre, Precio y Meses son obligatorios");
+                    MessageBox.Show(this, "Nombre, Precio y Meses son obligatorios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 if (!ExpresionesRegulares.RegEX.isDecimal(txtPrecio.Text.Trim()))
                 {
-                    MessageBox.Show("El precio debe ser un numero valido, no se permiten letras ni caracteres que no sean numeros");
+                    MessageBox.Show(this, "El precio debe ser un número valido, no se permiten letras ni caracteres", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -83,16 +83,16 @@ namespace Gimnasio.Membresias
                 oMembresia.idUsuarioLog = Utilidades.clsUsuario.idUsuario;
                 if (oMembresia.add())
                 {
-                    MessageBox.Show("Registro agregado con exito");
+                    MessageBox.Show(this, "Registro agregado con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
-                    MessageBox.Show(oMembresia.getError());
+                    MessageBox.Show(this, oMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
              }
               catch (Exception EX)
               {
-                  MessageBox.Show("Ocurrio un error de sistema " + EX.Message);
+                  MessageBox.Show(this, "Ocurrió un error de sistema " + EX.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
               }
         }
 
@@ -104,12 +104,12 @@ namespace Gimnasio.Membresias
                 //validaciones
                 if (txtNombre.Text.Trim().Equals("") || txtPrecio.Text.Trim().Equals("") || cboMeses.Text.Equals(""))
                 {
-                    MessageBox.Show("Nombre, Precio y Meses son obligatorios");
+                    MessageBox.Show(this, "Nombre, Precio y Meses son obligatorios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 if (!ExpresionesRegulares.RegEX.isDecimal(txtPrecio.Text.Trim()))
                 {
-                    MessageBox.Show("El precio debe ser un numero valido, no se permiten letras ni caracteres que no sean numeros");
+                    MessageBox.Show(this, "El precio debe ser un número valido, no se permiten letras ni caracteres", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -122,16 +122,34 @@ namespace Gimnasio.Membresias
                 oMembresia.idUsuarioLog = Utilidades.clsUsuario.idUsuario;
                 if (oMembresia.edit(idMembresia))
                 {
-                    MessageBox.Show("Registro modificado con exito");
+                    MessageBox.Show(this, "Registro modificado con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
-                    MessageBox.Show(oMembresia.getError());
+                    MessageBox.Show(this, oMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             catch (Exception EX)
             {
-                MessageBox.Show("Ocurrio un error de sistema "+EX.Message);
+                MessageBox.Show(this, "Ocurrió un error de sistema " + EX.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        Boolean cancel = false;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.cancel = true;
+            this.Close();
+        }
+
+        private void frmMembresia_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.cancel)
+            {
+                if (MessageBox.Show(this, "Estás seguro de cancelar", "Confirma cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }

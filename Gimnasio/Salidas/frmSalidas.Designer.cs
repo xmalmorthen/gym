@@ -36,29 +36,38 @@
             // spContenedor
             // 
             // 
-            // cmdEliminar
-            // 
-         
-            // 
             // cmdAbilitar
             // 
+            this.cmdAbilitar.Location = new System.Drawing.Point(396, 3);
             this.cmdAbilitar.Visible = false;
             // 
             // cmdDesabilitar
             // 
+            this.cmdDesabilitar.Location = new System.Drawing.Point(283, 3);
             this.cmdDesabilitar.Visible = false;
             // 
             // cmdModificar
             // 
-            this.cmdModificar.Size = new System.Drawing.Size(96, 31);
+            this.cmdModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmdModificar.Image = global::Gimnasio.Properties.Resources.iconfinder_visible_172630;
+            this.cmdModificar.Location = new System.Drawing.Point(2, 3);
+            this.cmdModificar.Size = new System.Drawing.Size(96, 48);
             this.cmdModificar.Text = "Mostrar";
+            // 
+            // cmdNuevo
+            // 
+            this.cmdNuevo.Location = new System.Drawing.Point(556, 3);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(154, 3);
             // 
             // frmSalidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Name = "frmSalidas";
-            this.Text = "Entradas";
+            this.Text = "Salidas";
             this.Load += new System.EventHandler(this.frmSalidas_Load);
             this.spContenedor.Panel1.ResumeLayout(false);
             this.spContenedor.Panel1.PerformLayout();

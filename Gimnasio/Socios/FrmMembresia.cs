@@ -37,13 +37,13 @@ namespace Gimnasio.Socios
             }
             else
             {
-                MessageBox.Show(oSocio.getError());
+                MessageBox.Show(this, oSocio.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //llenado de combo
             Membresias.clsMembresia.getCboMembresias(cboMembresia);
             if (cboMembresia.Items.Count <= 0)
             {
-                MessageBox.Show("No existen tipos de membresias agregadas al sistema, por favor ve al modulo de membresias y agregar una para poder ser asignada a los socios");
+                MessageBox.Show(this,"No existen tipos de membresias agregadas al sistema, por favor ve al modulo de membresias y agregar una para poder ser asignada a los socios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             
@@ -64,7 +64,7 @@ namespace Gimnasio.Socios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de sistema " + ex.Message);
+                MessageBox.Show(this, "Error de sistema " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -95,10 +95,12 @@ namespace Gimnasio.Socios
         {
             if (!oSocioMembresia.getDatos(dgvLista, oSocio.datos.idSocio))
             {
-                MessageBox.Show(oSocioMembresia.getError());
+                MessageBox.Show(this, oSocioMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                dgvLista.Columns[5].HeaderText = "Fecha de creación";
+
                 if (dgvLista.Rows.Count > 0)
                 {
                  //   dtpFechaInicio.Enabled = false;
@@ -128,7 +130,7 @@ namespace Gimnasio.Socios
             }
             else
             {
-                MessageBox.Show(oSocioMembresia.getError());
+                MessageBox.Show(this, oSocioMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -139,7 +141,7 @@ namespace Gimnasio.Socios
                 int id = int.Parse(Utilidades.OperacionesFormulario.getValorCelda(dgvLista, 0, 0));
                 if (id > 0)
                 {
-                    if (MessageBox.Show("Estas seguro de eliminar el ultimo registro agregado de membresia", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show(this,"Estas seguro de eliminar el ultimo registro agregado de membresia", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
                         if (oSocioMembresia.changeState(3, id))
                         {
@@ -147,19 +149,36 @@ namespace Gimnasio.Socios
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrio un error " + oSocioMembresia.getError());
+                            MessageBox.Show(this, "Ocurrió un error " + oSocioMembresia.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Debe existir una fila seleccionada");
+                    MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("No existen membresias para ser eliminadas");
+                MessageBox.Show(this, "No existen membresias para ser eliminadas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dgvLista_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow Myrow in dgvLista.Rows)
+            {
+                DateTime Fechavencimiento = DateTime.Parse(Myrow.Cells[2].Value.ToString());
+
+                if (DateTime.Compare(Fechavencimiento, DateTime.Now) < 0)
+                {
+                    Myrow.DefaultCellStyle.BackColor = Color.Red;
+                }
+                else
+                {
+                    Myrow.DefaultCellStyle.BackColor = Color.Green;
+                }
             }
         }
     }

@@ -36,7 +36,7 @@ namespace Gimnasio.Salidas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de sistema " + ex.Message);
+                MessageBox.Show(this,"Error de sistema " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -51,7 +51,12 @@ namespace Gimnasio.Salidas
         {
             if (!oSalida.getDatos(dgvLista))
             {
-                MessageBox.Show(oSalida.getError());
+                MessageBox.Show(this, oSalida.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                dgvLista.Columns[1].HeaderText = "Total";
+                dgvLista.Columns[2].HeaderText = "Fecha de creación";
             }
 
 
@@ -73,7 +78,7 @@ namespace Gimnasio.Salidas
             int id = Utilidades.OperacionesFormulario.getId(dgvLista);
             if (id > 0)
             {
-                if (MessageBox.Show("Estas seguro de eliminar el registro seleccionado", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show(this,"Está seguro de eliminar el registro seleccionado", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     if (oSalida.remove(id))
                     {
@@ -81,14 +86,14 @@ namespace Gimnasio.Salidas
                     }
                     else
                     {
-                        MessageBox.Show("Ocurrio un error " + oSalida.getError());
+                        MessageBox.Show(this, "Ocurrió un error " + oSalida.getError(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -99,14 +104,11 @@ namespace Gimnasio.Salidas
             {
                 frmViewSalida frmUs = new frmViewSalida();
                 frmUs.id = id;
-                frmUs.ShowDialog();
-              
-              
-
+                frmUs.ShowDialog(this);
             }
             else
             {
-                MessageBox.Show("Debe existir una fila seleccionada");
+                MessageBox.Show(this, "Debe existir una fila seleccionada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
